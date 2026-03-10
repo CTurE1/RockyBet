@@ -1,0 +1,12 @@
+node_modules/
+.env
+packages/contracts/out/
+packages/contracts/cache/
+packages/contracts/lib/
+packages/frontend/node_modules/
+packages/frontend/dist/
+skills-lock.json
+packages/contracts/compile_warnings.txt
+packages/contracts/compiled_output.json
+.mcp.json
+.*/

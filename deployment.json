@@ -1,0 +1,7 @@
+{
+  "network": "seismic-testnet",
+  "chainId": 5124,
+  "MarketFactory": "0x5A0211E40432662AdBdBAbde3dd798A2d0774455",
+  "deployer": "0xe78a20afB8100E4750905dD913f8DF578F1D52De",
+  "deployedAt": "2026-03-10T13:47:48.159Z"
+}
