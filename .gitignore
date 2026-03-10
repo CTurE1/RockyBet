@@ -9,4 +9,5 @@ skills-lock.json
 packages/contracts/compile_warnings.txt
 packages/contracts/compiled_output.json
 .mcp.json
+scripts/bots/wallets.json
 .*/
