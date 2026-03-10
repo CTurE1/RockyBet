@@ -1,4 +1,4 @@
-export const FACTORY_ADDRESS = "0x5A0211E40432662AdBdBAbde3dd798A2d0774455";
+export const FACTORY_ADDRESS = "0x7595227Ef1104092b4A8d18cB0ad3c510b177039";
 
 // MetaMask chain switching params
 export const SEISMIC_MM = {

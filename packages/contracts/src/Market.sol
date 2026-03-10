@@ -91,6 +91,7 @@ contract Market {
     ///      Fee uses pull pattern: accumulated in contract, admin withdraws separately.
     ///      No external calls in this function → fully CEI compliant.
     function placeBet(suint256 _side) external payable beforeDeadline nonReentrant {
+        require(!resolved, "MARKET_RESOLVED");
         require(msg.value > 0, "NO_VALUE");
 
         // Fee calculation (plaintext — msg.value is public)
@@ -130,8 +131,9 @@ contract Market {
 
     /// @notice Admin resolves the market after the deadline
     /// @dev Reveals shielded pool totals — safe because betting is closed
+    /// @dev Admin can resolve early if the event outcome is already known.
+    ///      Once resolved, placeBet rejects new bets (require(!resolved)).
     function resolve(bool _outcome) external onlyAdmin {
-        require(block.timestamp >= deadline, "TOO_EARLY");
         require(!resolved, "ALREADY_RESOLVED");
 
         resolved = true;
