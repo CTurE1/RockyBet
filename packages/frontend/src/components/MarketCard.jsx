@@ -294,10 +294,12 @@ function MarketCard({
         </div>
       )}
 
-      {/* Admin resolve + withdraw fees */}
-      {isAdmin && isExpired && !market.resolved && (
+      {/* Admin resolve (early or after deadline) + withdraw fees */}
+      {isAdmin && !market.resolved && (
         <div className="border-t border-border px-4 py-3 flex items-center gap-2">
-          <span className="text-xs text-muted-foreground mr-auto">Admin:</span>
+          <span className="text-xs text-muted-foreground mr-auto">
+            {isExpired ? "Admin:" : "Resolve early:"}
+          </span>
           <Button
             onClick={() => resolve(true)}
             disabled={busy}
